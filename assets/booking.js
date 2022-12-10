@@ -1,8 +1,8 @@
 var hotelApiKey = "ab64e98c11msh399e1e4a32c7e2fp14ff54jsn7954d56bfedc";
 var searchBtn = document.getElementById(`myButton`);
 var cityInput = document.getElementById(`userInput`);
-var checkInInput = document.getElementById('checkInInput')
-var checkOutInput = document.getElementById('checkOutInput')
+var checkInInput = document.getElementById("checkInInput");
+var checkOutInput = document.getElementById("checkOutInput");
 
 // pulls hotel details from trip advisor api (requires geoId, and hoteId)
 async function getHotelInfo() {
@@ -24,11 +24,16 @@ async function getHotelInfo() {
       // grab the destination id from api
       var destinationId = parseInt(response[0].dest_id);
       // fetch hotel information api by using destination id provided in the hotel location api
-     fetch(
+      fetch(
+        // use to test without date input (comment out checkInInput/checkOutInput and the checkInInput/checkOutInput event listeners) 
         // "https://booking-com.p.rapidapi.com/v1/hotels/search?room_number=1&checkin_date=2022-12-10&checkout_date=2022-12-20&units=metric&order_by=popularity&adults_number=1&filter_by_currency=USD&locale=en-us&dest_id=" +
         //   destinationId +
         //   "&dest_type=city",
-          "https://booking-com.p.rapidapi.com/v1/hotels/search?room_number=1&checkin_date=" + checkInInput + "&checkout_date=" + checkOutInput + "&units=metric&order_by=popularity&adults_number=1&filter_by_currency=USD&locale=en-us&dest_id=" +
+        "https://booking-com.p.rapidapi.com/v1/hotels/search?room_number=1&checkin_date=" +
+          checkInInput +
+          "&checkout_date=" +
+          checkOutInput +
+          "&units=metric&order_by=popularity&adults_number=1&filter_by_currency=USD&locale=en-us&dest_id=" +
           destinationId +
           "&dest_type=city",
         options
@@ -56,33 +61,36 @@ async function getHotelInfo() {
             var hotelDiv = document.getElementById("hotel");
             // create new divs to take hotel information
             var hotelCard = document.createElement("div");
-            hotelCard.setAttribute('class', 'col')
+            hotelCard.setAttribute("class", "col");
             // place hotel title
-            var hotelTitles = document.createElement('h4')
-            hotelTitles.innerHTML = hotelTitle
-            hotelDiv.append(hotelCard)
-            hotelCard.append(hotelTitles)
+            var hotelTitles = document.createElement("h4");
+            hotelTitles.innerHTML = hotelTitle;
+            hotelDiv.append(hotelCard);
+            hotelCard.append(hotelTitles);
             // place hotel image
-            var hotelIMGs = document.createElement('img')
-            hotelIMGs.src = hotelIMG
-            hotelIMGs.width = 400
-            hotelIMGs.height = 300
-            hotelCard.append(hotelIMGs)
+            var hotelIMGs = document.createElement("img");
+            hotelIMGs.src = hotelIMG;
+            hotelIMGs.width = 400;
+            hotelIMGs.height = 300;
+            hotelCard.append(hotelIMGs);
             // place hotel unit info
-            var hotelUnits = document.createElement('dd')
-            hotelUnits.innerHTML = hotelUnit
-            hotelCard.append(hotelUnits)
+            var hotelUnits = document.createElement("dd");
+            hotelUnits.innerHTML = hotelUnit;
+            hotelCard.append(hotelUnits);
             // place hotel address
-            var formAddress = document.createElement('address')
-            formAddress.innerHTML = formattedAddress
-            hotelCard.append(formAddress)
+            var formAddress = document.createElement("address");
+            formAddress.innerHTML = formattedAddress;
+            hotelCard.append(formAddress);
             // place booking url
-            var hotelURLs = document.createElement('a')
-            hotelURLs.setAttribute('class', 'btn btn-light my-2 my-xl-0 border border-secondary')
-            var urlText = document.createTextNode('Click Here To Book')
-            hotelURLs.append(urlText)
-            hotelURLs.href = hotelURL
-            hotelCard.append(hotelURLs)
+            var hotelURLs = document.createElement("a");
+            hotelURLs.setAttribute(
+              "class",
+              "btn btn-light my-2 my-xl-0 border border-secondary"
+            );
+            var urlText = document.createTextNode("Click Here To Book");
+            hotelURLs.append(urlText);
+            hotelURLs.href = hotelURL;
+            hotelCard.append(hotelURLs);
           }
         })
         .catch((err) => console.error(err));
@@ -93,16 +101,13 @@ async function getHotelInfo() {
 searchBtn.addEventListener(`click`, getHotelInfo);
 
 //gets check in and check out dates as variables for use in the api call
-checkInInput.addEventListener('change', checkIn)
-checkOutInput.addEventListener('change', checkOut)
+checkInInput.addEventListener("change", checkIn);
+checkOutInput.addEventListener("change", checkOut);
 
-function checkIn(){
-    checkInInput = this.value
+function checkIn() {
+  checkInInput = this.value;
 }
 
-function checkOut(){
-    checkOutInput = this.value
+function checkOut() {
+  checkOutInput = this.value;
 }
-
-
-

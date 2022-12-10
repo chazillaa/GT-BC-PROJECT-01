@@ -1,8 +1,8 @@
 var weatherApiKey = "&appid=c0e0bc244d6e2e1a2584fe5f12098d0b&units=imperial";
 var searchBtn = document.getElementById(`myButton`);
-var homeBtn = document.getElementById('home')
+var homeBtn = document.getElementById("home");
 var cityInput = document.getElementById(`userInput`);
-var displayToggel = document.getElementById('display')
+var displayToggel = document.getElementById("display");
 var locationData;
 var tempData;
 var conditionData;
@@ -53,17 +53,16 @@ async function onSubmit() {
 }
 
 // remove jumbotron when search is made
-function removeJumbo(){
-  var displayToggel = document.getElementById('display')
-  displayToggel.style.display = 'none'
+function removeJumbo() {
+  var displayToggel = document.getElementById("display");
+  displayToggel.style.display = "none";
 }
-
 
 searchBtn.addEventListener(`click`, onSubmit);
 searchBtn.addEventListener(`click`, removeJumbo);
-homeBtn.addEventListener('click',  refreshPage);
+homeBtn.addEventListener("click", refreshPage);
 
 // refresh the page
-function refreshPage(){
-  location.reload()
+function refreshPage() {
+  location.reload();
 }
