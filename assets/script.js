@@ -18,7 +18,7 @@ function onSubmit() {
       var windData = data.wind.speed;
       //PUTTING API DATA INTO HTML
       // currentLocation.innerHTML = locationData
-      $(`#location`).text(locationData);
+      $(`#location`).text(`Location: ` + locationData);
       $(`#temp`).text(`Temperature: ` + tempData);
       $(`#condition`).text(`Condition: ` + conditionData);
       $(`#humidity`).text(`Humidity: ` + humidityData);
