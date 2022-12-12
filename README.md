@@ -64,6 +64,9 @@ Wins for our team
   * Display more information about the hotel (price, amenities, etc.)
   * Add icons for the weather
 
+## Link to Deployed page
+
+[Open Bookings](https://chazillaa.github.io/Open-Bookings/)
 
 --------
 
