@@ -24,25 +24,25 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="#" id="home">Open Bookings</a>
         <form class="d-flex">
+          <label for="userInput">Search City: </label>
           <input
             class="form-control me-sm-3 bg-light w-50"
             type="text"
-            placeholder="Search City Name"
-            id="userInput"
+            id="userInput" required
           />
+          <label for="form-control me-sm-2 bg-light w-50">Check In Date: </label>
           <input
             class="form-control me-sm-2 bg-light w-50"
             type="text"
-            placeholder="Check In Date:"
             onfocus="(this.type='date')"
-            id="checkInInput"
+            id="checkInInput" required
           />
+          <label for="form-control me-sm-2 bg-light w-50">Check Out Date: </label>
           <input
             class="form-control me-sm-2 bg-light w-50"
             type="text"
-            placeholder="Check Out Date:"
             onfocus="(this.type='date')"
-            id="checkOutInput"
+            id="checkOutInput" required
           />
           <button
             class="btn btn-secondary my-2 my-xl-0"
