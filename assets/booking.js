@@ -62,7 +62,7 @@ function getHotelInfo() {
               var hotelCard = document.createElement("div");
               hotelCard.setAttribute(
                 "class",
-                "col mx-3 my-3 border border-seconday rounded"
+                "col mx-3 my-3 border border-dark rounded"
               );
               // place hotel title
               var hotelTitles = document.createElement("h4");
@@ -91,7 +91,7 @@ function getHotelInfo() {
               var hotelURLs = document.createElement("a");
               hotelURLs.setAttribute(
                 "class",
-                "btn btn-light mx-3 my-3 border border-secondary"
+                "btn btn-light mx-3 my-3 border border-dark"
               );
               var urlText = document.createTextNode("Click Here To Book");
               hotelURLs.append(urlText);

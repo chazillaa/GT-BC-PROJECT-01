@@ -62,7 +62,7 @@ async function onSubmit() {
               var maxTemp = document.createElement("p");
               maxTemp.setAttribute(
                 "class",
-                "col mx-3 my-3 border border-seconday rounded"
+                "col mx-3 my-3 border border-dark rounded"
               );
               maxTemp.innerHTML =
                 "<strong>" +
@@ -99,7 +99,7 @@ async function onSubmit() {
 // create a div that holds the weather info
 function currentWeatherCard() {
   var currentDiv = document.createElement("div");
-  currentDiv.setAttribute("class", "col border border-seconday rounded");
+  currentDiv.setAttribute("class", "col mx-3 my-3");
   var locationEl = document.createElement("h1");
   var tempEl = document.createElement("p");
   locationEl.innerHTML = locationData;
@@ -119,8 +119,6 @@ function currentWeatherCard() {
   currentDiv.append(locationEl);
   currentDiv.append(tempEl);
   weatherDiv.append(currentDiv);
-
-  var fiveDayDiv = document.createElement("div");
 }
 
 // remove jumbotron when search is made
