@@ -18,7 +18,7 @@ async function onSubmit() {
       // remove event listener to prevent duplicate elements
     searchBtn.removeEventListener("click", onSubmit);
     var weatherApi =
-      "http://api.openweathermap.org/data/2.5/weather?q=" +
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
       cityInput.value +
       "&appid=" +
       weatherApiKey +
