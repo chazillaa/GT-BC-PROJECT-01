@@ -26,7 +26,6 @@ async function onSubmit() {
     fetch(weatherApi)
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
         // fetch weather data from api
         locationData = response.name;
         tempData = response.main.temp;
@@ -49,7 +48,6 @@ async function onSubmit() {
         fetch(weatherFive)
           .then((response) => response.json())
           .then((response) => {
-            console.log(response);
             // loop over 5 results
             for (i = 0; i <= 5; i++) {
               // fetch max temp, min temp, and wind speed for 5 days
