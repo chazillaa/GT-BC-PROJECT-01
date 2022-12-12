@@ -18,7 +18,7 @@ SO THAT I can view the weather and hotel options for booking
 
 The following animation shows the web application's appearance and functionality:
 
-![demo]()
+![Open Bookings Demo](https://user-images.githubusercontent.com/66179678/207160241-b64cd218-67d2-4caf-bbd0-13fc41716896.mov)
 
 ## Technologies
 
